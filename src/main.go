@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	c "projects/goStudyng/POO/Bank/account"
+	c "projects/goStudyng/POO/Bank/src/account"
 )
 
 func main() {
