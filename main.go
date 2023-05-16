@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	account "goStudyng/POO/Bank/Account"
+	c "projects/goStudyng/POO/Bank/account"
 )
 
 func main() {
-	var accountLegal *account.AccountCurrent
-	accountLegal = new(account.AccountCurrent)
+	var accountLegal *c.AccountCurrent
+	accountLegal = new(c.AccountCurrent)
 	accountLegal.Title = "Julia"
 	accountLegal.Balance = 1000
 
@@ -18,8 +18,8 @@ func main() {
 	status, value := accountLegal.DepositMoney(400)
 	fmt.Println(status, value)
 
-	var accountPhisical *account.AccountCurrent
-	accountPhisical = new(account.AccountCurrent)
+	var accountPhisical *c.AccountCurrent
+	accountPhisical = new(c.AccountCurrent)
 	accountPhisical.Title = "Juan"
 	accountPhisical.Balance = 1000
 
