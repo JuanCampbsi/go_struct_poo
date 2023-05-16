@@ -33,7 +33,7 @@ func main() {
 			balance:       2000.0,
 		},
 	}
-	fmt.Println("Antes do append: ", len(accountSlices))
+	fmt.Println("before append: ", len(accountSlices))
 	accountSlices = append(accountSlices, &AccountCurrent{
 		title:         "Campos",
 		numberAgency:  999,
@@ -41,7 +41,7 @@ func main() {
 		balance:       1000.0,
 	})
 
-	fmt.Println("Depois do append: ", len(accountSlices))
+	fmt.Println("after append: ", len(accountSlices))
 	fmt.Println(*accountSlices[len(accountSlices)-1])
 	fmt.Println(&accountLegal)
 }
