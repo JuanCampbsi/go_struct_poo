@@ -30,6 +30,6 @@ func main() {
 	statusPhisical, valuePhisical := accountPhisical.DepositMoney(-100)
 	fmt.Println(statusPhisical, valuePhisical)
 
-	statusTransfer := accountPhisical.TransferAccount(-200, accountLegal)
+	statusTransfer := accountPhisical.TransferAccount(200, accountLegal)
 	fmt.Println(statusTransfer, *accountPhisical, *accountLegal)
 }
