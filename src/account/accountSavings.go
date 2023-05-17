@@ -2,13 +2,13 @@ package account
 
 import client "projects/goStudyng/POO/Bank/src/client"
 
-type AccountCurrent struct {
-	Title                       client.Customers
-	NumberAgency, NumberAccount int
-	Balance                     float64
+type AccountSavings struct {
+	Title                                  client.Customers
+	NumberAgency, NumberAccount, Operation int
+	Balance                                float64
 }
 
-func (c *AccountCurrent) WithDrawMoney(value float64) string {
+func (c *AccountSavings) WithDrawMoney(value float64) string {
 	if value > 0 && value <= c.Balance {
 		c.Balance -= value
 		return "Successful withdrawal"
@@ -17,7 +17,7 @@ func (c *AccountCurrent) WithDrawMoney(value float64) string {
 	}
 }
 
-func (c *AccountCurrent) DepositMoney(value float64) (string, float64) {
+func (c *AccountSavings) DepositMoney(value float64) (string, float64) {
 	if value > 0 {
 		c.Balance += value
 		return "\nDeposit made successfully Mr. " + c.Title.Name + " your current Balance is: ", c.Balance
@@ -26,7 +26,7 @@ func (c *AccountCurrent) DepositMoney(value float64) (string, float64) {
 	}
 }
 
-func (c *AccountCurrent) TransferAccount(value float64, targetAccount *AccountCurrent) string {
+func (c *AccountSavings) TransferAccount(value float64, targetAccount *AccountSavings) string {
 	if value > 0 && value < c.Balance {
 		c.Balance -= value
 		targetAccount.DepositMoney(value)
@@ -36,6 +36,6 @@ func (c *AccountCurrent) TransferAccount(value float64, targetAccount *AccountCu
 	}
 }
 
-func (c *AccountCurrent) GetBalanceUser() float64 {
+func (c *AccountSavings) GetBalanceUser() float64 {
 	return c.Balance
 }
